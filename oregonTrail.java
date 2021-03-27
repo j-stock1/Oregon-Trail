@@ -11,8 +11,8 @@ public class oregonTrail {
     private JButton storeButton;
     private JLabel numberOfDays;
     private int dayCounter;
-
-
+    private int[] itemInventory = {100, 45, 2, 55, 300, 35, 36};
+    private int[] itemInventorys = {100, 45, 2, 55, 300, 35, 36};
     public oregonTrail() {
         stopToLookAroundButton.addActionListener(new ActionListener() {
             @Override
@@ -23,19 +23,11 @@ public class oregonTrail {
         inventoryButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int itemInventory[ ]= new int[8];
-                itemInventory[1]= 100;
-                itemInventory[2]= 45;
-                itemInventory[3]= 2;
-                itemInventory[4]= 55;
-                itemInventory[5]= 300;
-                itemInventory[6]= 35;
-                itemInventory[7]= 36;
 
-                JOptionPane.showMessageDialog(null, itemInventory[1] + " bottles of water" + "\n"
-                        +itemInventory[2] + " bottles of beer" + "\n" + itemInventory[3] + " spare wheels" + "\n"
-                        + itemInventory[4] + " bullets" + "\n" +itemInventory[5] +" dollars" + "\n"
-                        +itemInventory[6] + " cases of food" + "\n" + itemInventory[7] + " cases of animal food");
+                JOptionPane.showMessageDialog(null, itemInventory[0] + " bottles of water" + "\n"
+                        +itemInventory[1] + " bottles of beer" + "\n" + itemInventory[2] + " spare wheels" + "\n"
+                        + itemInventory[3] + " bullets" + "\n" +itemInventory[4] +" dollars" + "\n"
+                        +itemInventory[5] + " cases of food" + "\n" + itemInventory[6] + " cases of animal food");
             }
         });
         nextDayButton.addActionListener(new ActionListener() {
@@ -49,6 +41,14 @@ public class oregonTrail {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                JOptionPane.showMessageDialog(null, itemInventorys[0] + " bottles of water" + "\n"
+                        +itemInventorys[1] + " bottles of beer" + "\n" + itemInventorys[2] + " spare wheels" + "\n"
+                        + itemInventorys[3] + " bullets" + "\n" +itemInventorys[4] +" dollars" + "\n"
+                        +itemInventorys[5] + " cases of food" + "\n" + itemInventorys[6] + " cases of animal food");
+                for (int i = 0; i < 7; i++) {
+                    itemInventory[i] += itemInventorys[i];
+                    itemInventorys[i] = 0;
+                }
             }
         });
     }
