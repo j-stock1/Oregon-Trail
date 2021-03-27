@@ -10,6 +10,7 @@ public class oregonTrail {
     private JPanel panel1;
     private JButton storeButton;
     private JLabel numberOfDays;
+    private int dayCounter;
 
 
     public oregonTrail() {
@@ -40,11 +41,8 @@ public class oregonTrail {
         nextDayButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int dayCounter = 0;
-                do {
-                    dayCounter = dayCounter + 1;
-                    numberOfDays.setText(Integer.toString(dayCounter));
-                }while (dayCounter <= 200);
+                dayCounter++;
+                numberOfDays.setText(Integer.toString(dayCounter));
             }
         });
         storeButton.addActionListener(new ActionListener() {
