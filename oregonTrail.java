@@ -77,6 +77,20 @@ public class oregonTrail {
                 JOptionPane.showMessageDialog(null, "You have reached " + locations[currentLocation++]);
             }
         });
+        mapButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ImageIcon icon = new ImageIcon("OregonTrailMap.jpg");
+                JOptionPane.showMessageDialog(null, icon);
+            }
+        });
+        rationsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Object[] options = {"Filling", "Meager", "Bare Bones"};
+                JOptionPane.showOptionDialog(null, "How much do you want to eat?", "Question", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+            }
+        });
     }
 
     public static void main(String[] args) {
