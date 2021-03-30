@@ -10,9 +10,22 @@ public class oregonTrail {
     private JPanel panel1;
     private JButton storeButton;
     private JLabel numberOfDays;
+    private JButton tradeButton;
+    private JButton talkButton;
+    private JButton restButton;
+    private JButton paceButton;
+    private JButton huntButton;
+    private JButton mapButton;
+    private JButton guideButton;
+    private JButton statusButton;
+    private JButton rationsButton;
+    private JButton buyButton;
+    private JButton continueButton;
     private int dayCounter;
     private int[] itemInventory = {100, 45, 2, 55, 300, 35, 36};
     private int[] itemInventorys = {100, 45, 2, 55, 300, 35, 36};
+    private int currentLocation = 0;
+    private String[] locations = {"Kansas River Crossing", "Big Blue River", "Fort Kearney", "Chimney Rock", "Fort Laramie", "Independence Rock", "South Pass", "Fort Bridger", "Green River", "Soda Springs", "Fort Hall", "Snake River", "Fort Boise", "Grade Ronde Valley"};
     public oregonTrail() {
         stopToLookAroundButton.addActionListener(new ActionListener() {
             @Override
@@ -49,6 +62,19 @@ public class oregonTrail {
                     itemInventory[i] += itemInventorys[i];
                     itemInventorys[i] = 0;
                 }
+            }
+        });
+        paceButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Object[] options = {"A steady pace", "A strenuous pace", "A grueling pace"};
+                JOptionPane.showOptionDialog(null, "How fast do you want to travel?", "Question", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+            }
+        });
+        continueButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "You have reached " + locations[currentLocation++]);
             }
         });
     }
